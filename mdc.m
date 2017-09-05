@@ -10,7 +10,6 @@ centroid1 = sum(data(1:2,1:100),2) / size(data(1:2,1:100),2);
 centroid2 = sum(data(1:2,101:200),2) / size(data(1:2,101:200),2);
 centroid3 = sum(data(1:2,201:300),2) / size(data(1:2,201:300),2);
 
-
 plot(data(1,1:100), data(2,1:100), 'rx'); hold on;
 plot(data(1,101:200), data(2,101:200), 'bx');
 plot(data(1,201:300), data(2,201:300), 'gx');
@@ -22,6 +21,9 @@ plot(centroid2(1,1), centroid2(2,1), 'b*');
 plot(centroid3(1,1), centroid3(2,1), 'g*');
 
 axis([-8 8 -8 8]);
+title('Minimum Distance Classifier');
+xlabel('X1');
+ylabel('X2');
 
 centroids = [centroid1 centroid2 centroid3];
 
@@ -36,4 +38,5 @@ for i = 1:length(centroids)
     distances = [distances dist];
 end
 
+distances
 labels(find(min(distances) == distances))
