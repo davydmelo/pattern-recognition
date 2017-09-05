@@ -1,1 +1,3 @@
-pattern-recognition
+NN - Nearest Neighbor
+
+MDC - Minimum Distance Classifier
