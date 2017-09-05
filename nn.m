@@ -30,10 +30,12 @@ xlabel('X1');
 ylabel('X2');
 
 distances = [];
+tic;
 for i = 1:length(data)
     diff = data(1:2,i) - point;
     dist = sqrt(diff' * diff);
     distances = [distances dist];
 end
+time = toc
 
 labels(data(3, find(min(distances) == distances)),:)

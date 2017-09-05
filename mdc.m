@@ -32,11 +32,13 @@ plot([point(1,1) centroid2(1,1)],[point(2,1) centroid2(2,1)],'b');
 plot([point(1,1) centroid3(1,1)],[point(2,1) centroid3(2,1)],'g');
 
 distances = [];
+tic;
 for i = 1:length(centroids)
     diff = centroids(:,i) - point;
     dist = sqrt(diff' * diff);
     distances = [distances dist];
 end
+time = toc
 
 distances
 labels(find(min(distances) == distances))
